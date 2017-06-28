@@ -298,6 +298,8 @@ class Search extends Component {
                         },
 
                     ]}
+                    autoFocus={this.props.autoFocus}
+                    selectionColor={this.props.placeholderTextColor}
                     editable={this.props.editable}
                     value={this.state.keyword}
                     onChangeText={this.onChangeText}
@@ -323,7 +325,7 @@ class Search extends Component {
                         </Animated.View>
                         :
                         <Animated.Image
-                            source={require('./img/search.png')}
+                            source={this.props.imageSearch ? this.props.imageSearch : require('./img/search.png')}
                             style={[
                                 styles.iconSearch,
                                 styles.iconSearchDefault,
@@ -347,7 +349,7 @@ class Search extends Component {
                         </Animated.View>
                         :
                         <Animated.Image
-                            source={require('./img/delete.png')}
+                            source={this.props.imageDelete ? this.props.imageDelete : require('./img/delete.png')}
                             style={[
                                 styles.iconDelete,
                                 styles.iconDeleteDefault,
